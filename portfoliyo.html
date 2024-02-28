@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfoliyo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins',sans-serif;
+            box-sizing: border-box;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background: #080808;
+            color: #fff;
+        }
+       #header{
+        width: 100%;
+        height: 100vh;
+        /*background-image:url(bg1.jpg) ;*/
+        background-size: cover;
+        background-position:center ;
+        
+       }
+
+.container{
+    padding: 10px 10%;
+   
+}
+.logo{
+    border: 2px solid;
+    width: 115px;
+    height: auto;
+
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size:20px;
+    position: relative;
+}
+nav ul li a::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: #c20c45;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color:burlywood;
+}
+/* ------------------about-------------- */
+
+#about{
+    padding: 80px 0;
+    color: #ababab;
+ 
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+
+}
+.about-col-1 img{
+    width: 50%;
+    border-radius: 30px;
+    margin-left: 5%;
+
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+
+}
+.tab-links.active-link::after{
+width: 50%;
+}
+.tab-contents{
+    list-style: none;
+    margin: 10px 0;
+
+}
+.tab-contents  li span{
+    color: #ff004f;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+/* ----------------------services--------------- */
+
+
+
+
+#services{
+    padding: 30px 0;
+
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s,transform 0.5s;
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.services-list div  h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.services-list div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div:hover{
+    background: #ff004f;
+    transform: translateY(-10px);
+}
+/* ---------------------------------------portfoliyo--------------------------------  */
+
+#portfolio{
+    padding: 50px 0;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+
+}
+.layer a{
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.work:hover img{
+    transform:scale(1.1) ;
+
+}
+.work:hover .layer{
+    height: 100%;
+
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #ff004f;
+}
+
+/* ---------------------------------------contact----------------------------------- */
+
+.contact-left{
+    flex-basis: 35%;
+}
+
+
+.contact-right{
+    flex-basis: 60%;
+}
+
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: #ff004f;
+    transform: translateY(-5px);
+
+}
+.btn.btn2{
+    display: inline-block;
+    background: #ff004f;
+}
+.contact-right form{
+width: 100%;
+
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20pxzs;
+}
+.copyright i{
+    color: #ff004f;
+}
+
+/* -----------------------------------css for small screen------------------------ */
+
+nav .fa-solid{
+    display: none;
+}
+
+
+
+
+@media only screen and (max-width:600px){
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+
+    }
+    nav .fa-solid{
+    display: block;
+    font-size: 25px;
+}
+nav ul{
+    background: #ff004f;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.5s;
+
+}
+nav ul li{
+    display: block;
+    margin: 25px;
+}
+nav ul .fa-solid{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+}
+.sub-title{
+    font-size: 40px;
+    margin-left: 15px;
+
+}
+.about-col-1, .labout-col-2{
+    flex-basis: 100%;
+    margin-left: 10%;
+    
+    
+}
+.about-col-1{
+    margin-bottom: 30px;
+    margin-left: 10%;
+    
+
+}
+.labout-col-2{
+    font-size: 14px;
+    
+  
+    
+}
+.tab-links{
+    font-size: 16px;
+    margin-right: 20px;
+    
+  
+    
+    
+}
+.contact-left, .contact-right{
+    flex-basis: 100%;
+    
+}
+.fa-solid{
+    margin-left: 5%;
+    
+}
+.btn {
+    margin-left: 5%;
+}
+.social-icons{
+    margin-left: 5%;
+}
+
+}
+
+
+
+
+
+    </style>
+    <!-- <script src="http://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="zlogo.jpg"class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">My Service</a></li>
+                    <li><a href="#portfolio">My Work</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>WEBSITE CREATOR</p>
+                <h1>Hi, I'm <span>zishan</span> khan <br> from bihar</h1>
+
+            </div>
+        </div>
+    </div>
+    <!-- -------------about----------- -->
+    <div id="about">
+        <div class="container-1">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="back.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Developed And Maintained Impactful Web Application .- Proficiant
+                        In A Range Of Essential Programming Langauages And Technologies,
+                        Including HTML,CSS,Javascript.- Demonstrated Expertise In Designing Efficient
+                        Database,Creating MYSQL , PHP , Stored Procedures, View, And Optimizing Query Performance.
+                        
+                        
+                        </p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('Experiance')">Experiance</p>
+                            <p class="tab-links"  onclick="opentab('Educations')">Education</p>
+                         
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <li><span>Fronted Developer</span><br>Someone who creates websites and web applications.</li>
+                            <br>
+                            <li><span>Backend development</span><br>The expert who build and maintain the mechanisms <br> that process data and perform actions on Website.</li>
+                        </div>
+
+                        <div class="tab-contents" id="Experiance">
+                            <li><span>2023-current</span><br>Web Developer tranning at specbits institute.</li><br>
+
+                            <li><span>2019-2020</span><br>Team lead at oppo manufacture company.</li><br>
+
+                            <li><span>2018-2019</span><br>Cogent pvt ltd BPO company-Handle Inbound and outbound <br> calls and resolve the customer query, <br>maintain good customer relations, write and submit timely reports on <br>Performance target,and customer query.</li>
+                        </div>
+                        <div class="tab-contents" id="Educations">
+                            <li><span>2023</span><br>Web Developer tranning at specbits institute.</li>
+                            <li><span>2019-2022</span><br>Bechelor of arts in English Honors.</li>
+                            <li><span>ADCA</span><br>Advance Diploma in computer applications.</li>
+                            
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!---------------------service----------------->
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title"> My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Full stack Developr</h2>
+                    <p>A full-stack developer is a developer or engineer who can build both the front end and the back end of a website. The front end (the parts of a website a user sees and interacts with) and the back end (the behind-the-scenes data storage and processing) require different skill sets.</p>
+                    <a href="#">learn more </a>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-crop-simple"></i>
+                    <h2>Fronted Devoloper</h2>
+                    <p>A Front-End Developer is someone who creates websites and web applications.
+                        The difference between Front-End and Back-End is that Front-End refers to how a web page looks, while back-end refers to how it works.
+                        You can think of Front-End as client-side and Back-End as server-side. 
+                        The basic languages for Front-End Development are HTML, CSS, and JavaScript.
+                        
+                        </p>
+                    <a href="#">learn more </a>
+                </div>
+
+                <div>
+                    <i class="fa-brands fa-app-store-ios"></i>
+                    <h2>Backend Developr</h2>
+                    <p>A backend developer is responsible for writing APIs, designing libraries, improving data architecture, and communicating with the database. The backend developer has good knowledge of backend programming languages, servers, databases, and APIs..</p>
+                    <a href="#">learn more </a>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+<!-- ---------------------------------------work-------------------------------- -->
+
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title"> My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="phone.jpg">
+                <div class="layer">
+                    <h3>instagram Icon</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus vel minima dolorem minus</p>
+                    <a href="instagram.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                
+            </div>
+            <div class="work">
+                <img src="mob.png">
+                <div class="layer">
+                    <h3>food Deliver Website</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus vel minima dolorem minus</p>
+                    <a href="food.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="mobile.png">
+                <div class="layer">
+                    <h3> Calculator</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus vel minima dolorem minus</p>
+                    <a href="calculator real.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+<a href="#" class="btn">See more</a>
+    </div>
+</div>
+
+
+
+
+<!-- ------------------------------contact------------------------------ -->
+
+<div id="contact">
+    <div class="containe">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Us</h1>
+                <p> <i class="fa-solid fa-paper-plane"></i>mdzishanaamir099@gmail.com</p>
+                <p> <i class="fa-solid fa-square-phone"></i></i>9341661420</p>
+                <div class="social-icons">
+                    <a href="http://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com/i/flow/login"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="zishan.pdf" class="btn btn2">Download Cv</a>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="your name" required>
+                    <input type="email" name="Email" placeholder="your email" required>
+                    <textarea name="message"  rows="6" placeholder="your massage"></textarea>
+                    <button type="submit" class="btn btn2">submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright @ Zishan. <i class="fa-solid fa-heart"></i> </p>
+    </div>
+</div>
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>
